@@ -78,9 +78,6 @@ TEMPLATES = [
 ]
 
 CORS_ALLOW_ALL_ORIGINS = True
-
-os.environ["DJANGO_SETTINGS_MODULE"] = "Face_Recognition.settings"
-
 WSGI_APPLICATION = "Face_Recognition.wsgi.application"
 
 
