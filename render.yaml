@@ -1,8 +1,3 @@
-databases:
-  - name: Face_Recognition
-    databaseName: Face_Recognition
-    user: Face_Recognition
-
 services:
   - type: web
     name: Face_Recognition
