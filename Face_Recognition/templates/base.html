@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    {% load static %}
+    <head>
+        <title>Face Recognition ITI Mansoura</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <link rel="stylesheet" href="{% static 'css/main.css' %}">
+        <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+        <h1 align="center"><a href="http://vis-www.cs.umass.edu/lfw/">Face Recognition using LFW dataset</a></h1>
+        {% block head %}
+        {% endblock %}
+    </head> 
+    <body>
+        {% block content %}
+        {% endblock %}
+    </body>
+    <div id="footer" style="text-align: center;">
+        <p>Copyright &copy; {{ current_year }} - All Rights Reserved -
+            <a href="https://www.linkedin.com/in/aleedo/">aleedo</a> &
+            <a href="https://eg.linkedin.com/in/ahmed-el-ghitany-79067716a">aylore</a>
+        </p>
+    </div>
+    <script href="{% static 'js/functions.js' %}"></script>
+</html>

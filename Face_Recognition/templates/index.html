@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% load static %}
+
+<html>
+    <head>
+        {% block head %}
+        <style>
+            .sc-percentage {
+                /* don't save it will ruin it */
+                transform: rotate({{ rotation }}deg);
+            }
+        </style>
+        {% endblock %}
+    </head>
+
+<body>
+    {% block content %}
+    <div style="display: flex; justify-content: space-evenly">
+        <!-- From the internet  -->
+        <form method="post" action="{% url 'from_url' %}">
+            {% csrf_token %}
+            <h1>Enter A URL</h1>
+            <label for="image-url"></label>
+            <input type="text" id="image-url" name="image-url" placeholder="https://example.com/image.jpg" required>
+            <button type="submit">Submit</button>
+        </form>
+
+        <!-- User Uploads -->
+        <form method="post" action="{% url 'from_file' %}" enctype="multipart/form-data">
+            {% csrf_token %}
+            <h1>Upload an image</h1>
+            <input type="file" name="image_file" id="image_file" accept="image/*" required><br>
+            <button type="submit">Upload</button>
+        </form>
+    </div>
+
+    <!-- Result Classification Image and confidence -->
+    <div style="display: grid; justify-content: center">
+        <div>
+            {% if is_there_face %}
+                {% if is_in_dataset %}
+                    <h1 align="center">{{ label }}</h1>
+                {% else %}
+                    <h2 align="center">This Person is most likely not in lfw dataset</h1>
+                    <p align="center">Most closest person to him is {{ label }}</p>
+                {% endif %}
+                <img src="data:image/jpeg;{{ detection }}">
+                <h3 align="center">Model confidence</h3>
+                <div style="display: flex; justify-content: center;">
+                    <div class="sc-gauge">
+                        <div class="sc-background">
+                            <div class="sc-percentage"></div>
+                            <div class="sc-mask"></div>
+                            <div class="sc-value" style="font-size: x-large;">{{ confidence }}%</div>
+                        </div>
+                        <span class="sc-min">0</span>
+                        <span class="sc-max">100</span>
+                    </div>
+                </div>
+            {% else %}
+                <h3 align="center">{{ saying_sorry }}</h3>
+                <img src="{{ sorry_img }}">
+            {% endif %}
+        </div>
+    </div>
+    </div>
+    </div>
+    {% endblock %}
+</body>
+</html>
