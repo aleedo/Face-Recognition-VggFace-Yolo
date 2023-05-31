@@ -1,5 +1,7 @@
+from django.conf import settings
 import os
 import random
+
 
 def saying_sorry():
     answers = [
@@ -20,17 +22,18 @@ def saying_sorry():
     choice = random.choices(answers, weights=weights)[0]
     return choice
 
+
 def sorry_img():
     img_paths = [
-    'https://shorturl.at/oAQ05',
-    'https://shorturl.at/frt14',
-    'https://shorturl.at/lnrBZ',
-    'https://shorturl.at/kqxV1',
-    'https://shorturl.at/stvQY',
-    'https://shorturl.at/esMQ6',
-    'https://shorturl.at/kJNT3',
-    'https://shorturl.at/egovS',
-    'https://shorturl.at/xKTUV',
-    'https://shorturl.at/tuMW6',
+        "https://shorturl.at/oAQ05",
+        "https://shorturl.at/frt14",
+        "https://shorturl.at/lnrBZ",
+        "https://shorturl.at/kqxV1",
+        "https://shorturl.at/stvQY",
+        "https://shorturl.at/esMQ6",
+        "https://shorturl.at/kJNT3",
+        "https://shorturl.at/egovS",
+        "https://shorturl.at/xKTUV",
+        "https://shorturl.at/tuMW6",
     ]
     return random.choice(img_paths)

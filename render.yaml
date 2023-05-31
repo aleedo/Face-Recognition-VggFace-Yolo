@@ -1,9 +1,10 @@
+# Poor People
 services:
   - type: web
     name: Face_Recognition
     env: python
     buildCommand: "./build.sh"
-    startCommand: "gunicorn Face_Recognition.wsgi:application"
+    startCommand: "gunicorn Face_Recognition.Face_Recognition.wsgi:application"
     envVars:
       - key: DATABASE_URL
         fromDatabase:
