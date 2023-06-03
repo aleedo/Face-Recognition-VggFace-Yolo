@@ -58,7 +58,7 @@ img {
     background-color: transparent;
 }
 
-a{
+a {
     text-decoration: none
 }
 
@@ -137,4 +137,14 @@ a:active {
     width: 100%;
     font-size: 48px;
     font-weight: 700
+}
+
+body {
+    background-color: #0c0c0c;
+    font-size: 14px;
+    line-height: 1.6;
+    font-family: "Montserrat", sans-serif;
+    color: #fff;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: 100%
 }
