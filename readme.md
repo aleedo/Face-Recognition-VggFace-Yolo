@@ -13,10 +13,18 @@ This project aims to leverage the power of deep learning and the VGGface model t
 # Deployment
 PythonAnywhere is a popular online platform that allows you to host, run, and deploy Python applications in the cloud. Deploying your face recognition project, which utilizes the VGGface model, on PythonAnywhere can provide a convenient and accessible way to make your application available to users. [view_here](http://ayolore.pythonanywhere.com/from_file/)
 
+
+
+
 # Model in Action  
 ![Home Screen](home.png)
 
 ![Prediction](prediction.png)
+
+# Live Demo on PythonAnyWhere.com
+
+
+https://github.com/aleedo/Face-Recognition-VggFace-Yolo/assets/62552716/321d9fb1-4d2c-449e-80e6-2588499f8062
 
 
 
